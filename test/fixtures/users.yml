@@ -1,0 +1,73 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+skip:
+  id: 1
+  username: skip
+  password: 7b7f7b7e97e1ecac6ce8057c5f3dec1c3c40186f
+  first_name: Skip
+  last_name: Mottram
+  email: skip@dellamottram.com
+  family: Skip
+  password_hint: Get the good guys in.  Votedem.
+della:
+  id: 2
+  username: della
+  password: 1ea9c259a474796bc304053c0f5c37262dfd5a3e
+  first_name: Della
+  last_name: Mottram
+  email: della@dellamottram.com
+  family: Della
+  password_hint: Six angels (grammyx6)
+keith:
+  id: 3
+  username: keith
+  password: 87cd5448fc7e73649a471a881f0ca769dd989dfe
+  first_name: Keith
+  last_name: Mottram
+  email: keith@dellamottram.com
+  family: Keith
+  password_hint: Festivus for the rest of us.
+kristin:
+  id: 4
+  username: kristin
+  password: bfb645b1e2d6bb2df6ea9e6cf3f49fd96edfe953
+  first_name: Kristin
+  last_name: Mottram
+  email: kristin@dellamottram.com
+  family: Keith
+  password_hint: Look!  Up in the sky!  It's supermom!
+steve:
+  id: 5
+  username: steve
+  password: 1e5ff444cfdc4a154126ddebc0223ffeae2d10c9
+  first_name: Steve
+  last_name: Mottram
+  email: steve@dellamottram.com
+  family: Steve
+  password_hint: Go GJ!  Go CC!  Go tigers!
+kris:
+  id: 6
+  username: kris
+  password: ef5ff786746f335b8bfe6094df111f9b8a009fd5
+  first_name: Kris
+  last_name: Mottram
+  email: kris@dellamottram.com
+  family: Steve
+  password_hint: The best real estate agent.  keepitreal.
+jon:
+  id: 7
+  username: jon
+  password: 75e2e9003aa5f08382cca3f93929fa8ce4c8a506
+  first_name: Jon
+  last_name: Mottram
+  email: jon@dellamottram.com
+  family: Jon
+  password_hint: The geek of geeks.
+steph:
+  id: 8
+  username: steph
+  password: 587bdbe460df469f3d3359be9e7db51f4eaa375b
+  first_name: Steph
+  last_name: Mottram
+  email: steph@dellamottram.com
+  family: Jon
+  password_hint: Tom Petty rules!

@@ -1,0 +1,16 @@
+<tr>
+  <td>
+    <%= want_line.position %>.)
+  </td>
+  <td width="300px">
+  <%= auto_link(h(want_line.gottahave)) %>
+  </td>
+  <% if mine == "true" -%>
+  <td>
+  <%= link_to 'remove', {:controller => 'main', 
+                         :action => 'remove_a_want',
+                         :id => @user.id, 
+                         :want_id => want_line.id}, {:class => 'small'} %>
+  </td>
+  <% end %>
+</tr>

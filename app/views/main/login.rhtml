@@ -1,0 +1,44 @@
+<h2 style="color: green">Welcome to the Mottram Adults Secret Santa Site!</h2>
+<br>
+
+<p style="color: red"><%= flash[:error] %></p>
+<p style="color: red"><%= flash[:notice] %></p>
+
+<h3> Please log in </h3>
+
+<%= form_tag({:action => 'login'}, {:name => 'login_form'})%>
+
+<table>
+	<tr>
+		<td>Username:</td>
+		<td><%= text_field('user', 'username') %></td>
+	</tr>
+	<tr>
+		<td>Password:</td>
+		<td><%= password_field('user', 'pw', 
+			"onkeypress" => 'if (event.keyCode == 13) {document.login_form.submit()}') %></td>
+	</tr>
+	<tr>
+        <td>&nbsp;</td>
+		<td align="center">
+            <%= link_to_function(image_tag("/images/login.png", 
+                        :title => 'Click to login', 
+                        :alt => 'Click to login', 
+                        :size => "89x50", 
+                        :border => '0'), 
+                        "document.login_form.submit()", 
+                        {:class => 'imgLink'}) %>
+        </td>
+	</tr>
+	<tr>
+        <td>&nbsp;</td>
+		<td align="center">
+			<%= link_to('forgot password', 
+			            {:action => 'forgot_password'}, 
+			            {:class => 'small'}) %>
+			
+		</td>
+	</tr>
+</table>
+
+<%= end_form_tag %>

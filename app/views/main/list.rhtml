@@ -1,0 +1,43 @@
+<h2> Welcome <%= @user.first_name %>! </h2>
+
+<% if @user.assigned == nil -%>
+  You haven't chosen a name yet, please pick a name out of the hat : <br/>
+  <center>
+  <%= link_to_image "/images/hat.png", {:action => 'pick_name', :id => @user.id}, 
+      {:title => 'Pick a name', 
+       :alt => 'Pick a name', 
+       :size => '128x111', 
+       :border => '0'} %>
+   </center>
+<% else -%>
+  <% chosen_one = User.find_by_username(@user.assigned) -%>
+  Congratulations!  You have chosen <b><%= chosen_one.first_name %></b>.<br/><br/>
+  <% if chosen_one.wants.size > 0 -%>
+    Here are some things on their list : <br/>
+    <table>
+    <%= render :partial => 'want_line', :collection => chosen_one.wants, 
+               :locals => { :mine => "false" } %>
+    </table>
+  <% else %>
+    They haven't put anything on their list yet (bummer).<br/><br/>
+  <% end -%>
+<% end -%>
+<br/>
+<hr/>
+Maybe you would like to add some things to your list : <br/>
+
+<% if @user.wants.size > 0 -%>
+  <table>
+  <%= render :partial => 'want_line', :collection => @user.wants, 
+             :locals => { :mine => "true" } %>
+  </table>
+<% end -%>
+
+<%= form_tag({ :action => "add_a_want", :id => @user.id }, { :name => "want_form" })%>
+<table>
+	<tr>
+		<td>I Want... </td>
+		<td><%= text_field('wants', 'gottahave', 'size' => 35) %></td>
+	</tr>
+</table>
+<%= end_form_tag %>
