@@ -12,8 +12,8 @@
 #   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
 defaults: &defaults
   adapter: mysql
-  username: jcm_xmas_adultz
-  password: xmas
+  username: dbuser
+  password: dbpass
   socket: <%= ["/tmp/mysqld.sock",
                "/tmp/mysql.sock",
                "/var/mysql/mysql.sock",
@@ -25,16 +25,16 @@ defaults: &defaults
                } %>    
 
 development:
-  database: xmas_adultz_development
+  database: xmas_development
   <<: *defaults                                                                 
 
 # Warning: The database defined as 'test' will be erased and
 # re-generated from your development database when you run 'rake'.
 # Do not set this db to the same as development or production.
 test:
-  database: xmas_adultz_test
+  database: xmas_test
   <<: *defaults                                                                 
 
 production:
-  database: jcm_xmas_adultz
+  database: xmas
   <<: *defaults                                                                 

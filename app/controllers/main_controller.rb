@@ -93,6 +93,7 @@ class MainController < ApplicationController
     end
   end
   
+### 2007
 #"kris -> "steph
 #"della -> "keith
 #"skip -> "jon
@@ -101,17 +102,43 @@ class MainController < ApplicationController
 #"steve -> "skip
 #"jon -> "steve
 #"kristin -> "della
+### 2009
+#"skip -> "steph
+#"steve -> "keith
+#"kristin -> "jon
+#"jon -> "kristin
+#"della -> "kris
+#"kris -> "skip
+#"steph -> "steve
+#"keith -> "della
+### 2010
+#"kris -> "steph
+#"steph -> "keith
+#"kristin -> "jon
+#"steve -> "kristin
+#"della -> "kris
+#"keith -> "skip
+#"skip -> "steve
+#"jon -> "della
+### 2011
+#Kristin -> Steph
+#Della -> Keith
+#Steve -> Jon
+#Kris -> Kristin
+#Steph -> Kris
+#Jon -> Steve
+#Keith -> Della
+
 
   def pick_name
     @user = User.find(params[:id])
-    @user.assigned="steph" if (@user.username) == "kris" 
-    @user.assigned="keith" if (@user.username) == "della" 
-    @user.assigned="jon" if (@user.username) == "skip" 
-    @user.assigned="kristin" if (@user.username) == "steph" 
-    @user.assigned="kris" if (@user.username) == "keith" 
-    @user.assigned="skip" if (@user.username) == "steve" 
+    @user.assigned="jon" if (@user.username) == "steve" 
+    @user.assigned="steph" if (@user.username) == "kristin" 
     @user.assigned="steve" if (@user.username) == "jon" 
-    @user.assigned="della" if (@user.username) == "kristin" 
+    @user.assigned="keith" if (@user.username) == "della" 
+    @user.assigned="kristin" if (@user.username) == "kris" 
+    @user.assigned="kris" if (@user.username) == "steph" 
+    @user.assigned="della" if (@user.username) == "keith" 
     @user.save!
     redirect_to :action => 'list'
   end

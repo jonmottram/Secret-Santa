@@ -37,7 +37,8 @@ Maybe you would like to add some things to your list : <br/>
 <table>
 	<tr>
 		<td>I Want... </td>
-		<td><%= text_field('wants', 'gottahave', 'size' => 35) %></td>
+		<td><%= text_area('wants', 'gottahave', :size => "75")  %></td>
+                <td><input name="want_form" type="submit" value="Add" /> </td>
 	</tr>
 </table>
 <%= end_form_tag %>
