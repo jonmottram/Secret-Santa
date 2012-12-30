@@ -4,12 +4,12 @@ class Person
   attr_accessor :santa
 
   def initialize(line)
-    m = /\"(\S+)\s+(\S+)\s+(\S+)\s+(\S+).*\"/.match(line)
+    m = /(\S+)\s+(\S+)\s+(\S+)\s+(\S+).*/.match(line)
     raise unless m
-    @first = m[1].capitalize
+    @first = m[1].gsub(/"/,'').capitalize
     @last = m[2].capitalize
     @email = m[3]
-    @last_time = m[4].capitalize
+    @last_time = m[4].gsub(/"/,'').capitalize
   end
 
   def can_be_santa_of?(other)
@@ -53,7 +53,7 @@ STDIN.read.each_line do |line|
   people << Person.new(line) unless line.empty?
 end
 
-srand 2011
+srand 2012
 santas = people.dup
 people.each do |person|
   person.santa = santas.delete_at(rand(santas.size))
@@ -76,4 +76,8 @@ end
 
 people.each do |person|
   printf "%s -> %s\n", person.santa.first, person.first
+end
+
+people.each do |person|
+  printf "@user.assigned=\"%s\" if (@user.username) == \"%s\"\n", person.first.downcase, person.santa.first.downcase
 end
