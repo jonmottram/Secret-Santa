@@ -53,7 +53,7 @@ STDIN.read.each_line do |line|
   people << Person.new(line) unless line.empty?
 end
 
-srand 2012
+srand 2013
 santas = people.dup
 people.each do |person|
   person.santa = santas.delete_at(rand(santas.size))

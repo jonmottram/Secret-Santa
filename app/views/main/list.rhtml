@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="/stylesheets/simple.css" />
 <h2> Welcome <%= @user.first_name %>! </h2>
 
 <% if @user.assigned == nil -%>
@@ -14,7 +15,7 @@
   Congratulations!  You have chosen <b><%= chosen_one.first_name %></b>.<br/><br/>
   <% if chosen_one.wants.size > 0 -%>
     Here are some things on their list : <br/>
-    <table>
+    <table class="table table-striped">
     <%= render :partial => 'want_line', :collection => chosen_one.wants, 
                :locals => { :mine => "false" } %>
     </table>
@@ -27,18 +28,20 @@
 Maybe you would like to add some things to your list : <br/>
 
 <% if @user.wants.size > 0 -%>
-  <table>
+  <table class="table table-striped">
   <%= render :partial => 'want_line', :collection => @user.wants, 
              :locals => { :mine => "true" } %>
   </table>
 <% end -%>
 
 <%= form_tag({ :action => "add_a_want", :id => @user.id }, { :name => "want_form" })%>
-<table>
+<table class="table table-striped">
+  <tbody>
 	<tr>
 		<td>I Want... </td>
 		<td><%= text_area('wants', 'gottahave', :size => "75")  %></td>
                 <td><input name="want_form" type="submit" value="Add" /> </td>
 	</tr>
+  </tbody>
 </table>
 <%= end_form_tag %>

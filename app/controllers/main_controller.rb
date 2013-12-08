@@ -143,23 +143,38 @@ class MainController < ApplicationController
 #Gavin -> Billy
 #Keith -> Bryan
 #Josie -> Della
+### 2013
+#Gavin -> Steph
+#Bryan -> Keith
+#Steve -> Jon
+#Kris -> Kristin
+#Keith -> Kris
+#Della -> Steve
+#Steph -> Della
+#Jon -> Lila
+#Kristin -> Andrew
+#Jack -> Bryan
+#Billy -> Gavin
+#Josie -> Billy
+#Lila -> Josie
+#Andrew -> Jack
 
   def pick_name
     @user = User.find(params[:id])
-    @user.assigned="steph" if (@user.username) == "della"
-    @user.assigned="jon" if (@user.username) == "jack"
-    @user.assigned="andrew" if (@user.username) == "steve"
-    @user.assigned="josie" if (@user.username) == "billy"
-    @user.assigned="keith" if (@user.username) == "andrew"
-    @user.assigned="kristin" if (@user.username) == "jon"
-    @user.assigned="jack" if (@user.username) == "kris"
-    @user.assigned="gavin" if (@user.username) == "bryan"
-    @user.assigned="lila" if (@user.username) == "steph"
-    @user.assigned="kris" if (@user.username) == "kristin"
-    @user.assigned="steve" if (@user.username) == "lila"
-    @user.assigned="billy" if (@user.username) == "gavin"
-    @user.assigned="bryan" if (@user.username) == "keith"
-    @user.assigned="della" if (@user.username) == "josie"
+    @user.assigned="steph" if (@user.username) == "gavin"
+    @user.assigned="jon" if (@user.username) == "steve"
+    @user.assigned="andrew" if (@user.username) == "kristin"
+    @user.assigned="josie" if (@user.username) == "lila"
+    @user.assigned="keith" if (@user.username) == "bryan"
+    @user.assigned="kristin" if (@user.username) == "kris"
+    @user.assigned="jack" if (@user.username) == "andrew"
+    @user.assigned="gavin" if (@user.username) == "billy"
+    @user.assigned="lila" if (@user.username) == "jon"
+    @user.assigned="kris" if (@user.username) == "keith"
+    @user.assigned="steve" if (@user.username) == "della"
+    @user.assigned="billy" if (@user.username) == "josie"
+    @user.assigned="bryan" if (@user.username) == "jack"
+    @user.assigned="della" if (@user.username) == "steph"
     @user.save!
     redirect_to :action => 'list'
   end
