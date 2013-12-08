@@ -13,6 +13,11 @@ background-color:green;
 color:white;
 }
 
-tr:nth-child(even) {background: #00BB00}
-tr:nth-child(odd) {background: #00FF00}
+td:first-child
+{
+vertical-align:top;
+}
+
+tr:nth-child(even) {background: #CCC}
+tr:nth-child(odd) {background: #FFF}
 
