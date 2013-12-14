@@ -1,5 +1,9 @@
 class MainController < ApplicationController
 
+  def index
+    redirect_to :controller=> 'main', :action => 'login'
+  end
+
   def login
     if request.get?
       session[:user_id] = nil
@@ -19,7 +23,7 @@ class MainController < ApplicationController
   def logout
     reset_session
     @user = nil
-    redirect_to :action => 'index'
+    redirect_to :controller => 'main', :action => 'login'
   end
   
   def goto_flash_page
